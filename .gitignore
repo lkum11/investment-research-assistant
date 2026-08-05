@@ -1,0 +1,18 @@
+# Secrets — never commit these
+.env
+
+# Python virtual environment
+venv/
+
+# Python cache and build artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Data — keep raw source files out of git
+data/raw/
+
+# OS / editor noise
+.DS_Store
+.vscode/
+.idea/
