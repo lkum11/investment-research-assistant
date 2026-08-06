@@ -11,6 +11,7 @@ __pycache__/
 
 # Data — keep raw source files out of git
 data/raw/
+data/chroma/
 
 # OS / editor noise
 .DS_Store
