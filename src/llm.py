@@ -1,4 +1,5 @@
-from openai import OpenAI
+# from openai import OpenAI
+from langfuse.openai import OpenAI
 from src.config import LLM_MODEL, OPENAI_API_KEY
 
 client = OpenAI(api_key=OPENAI_API_KEY)
