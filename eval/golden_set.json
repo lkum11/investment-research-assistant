@@ -50,25 +50,25 @@
   {
     "id": 9,
     "question": "What were Apple's non-current marketable securities as of September 27, 2025?",
-    "ground_truth": "77,723 million",
+    "ground_truth": "$77,723 million",
     "source": "apple_earnings_2026q3.pdf"
   },
   {
     "id": 10,
-    "question": "What was Cash paid for income taxes in September 27, 2025?",
-    "ground_truth": "37,332 million",
+    "question": "What was the cash paid for income taxes, net, for the nine months ended June 28, 2025?",
+    "ground_truth": "$37,332 million",
     "source": "apple_earnings_2026q3.pdf"
   },
   {
     "id": 11,
     "question": "What was Cash paid for income taxes in June 27, 2026?",
-    "ground_truth": "26,555 million",
+    "ground_truth": "$26,555 million",
     "source": "apple_earnings_2026q3.pdf"
   },
   {
     "id": 12,
     "question": "How much Cash paid for income taxes increase/decrease from June 28 2025 to June 27, 2026?",
-    "ground_truth": "10,777 million decrease",
+    "ground_truth": "$10,777 million decrease",
     "source": "apple_earnings_2026q3.pdf"
   },
   {
