@@ -23,29 +23,19 @@ number can move real money, so refusing when uncertain is a feature.
 
 ## Architecture
 
-Query flow (online):
+**Query flow (online):**
 
-question ──▶ FastAPI /ask
-│
-▼
-┌─────────────┐ searches
-│ Retriever │ ◀────────────── Chroma (vector store)
-└─────────────┘
-│ relevant chunks
-▼
-┌─────────────┐
-│ Synthesizer │ grounded answer + citations (or honest refusal)
-└─────────────┘
-│
-▼
-┌─────────────┐
-│ Critic │ is every claim supported by the chunks?
-└─────────────┘
-│
-supported? ──── no, retry (max 2) ──▶ back to Synthesizer
-│ yes
-▼
-return answer + verdict
+```mermaid
+flowchart TD
+    Q[Question] --> API[FastAPI /ask]
+    API --> R[Retriever agent]
+    CH[(Chroma<br/>vector store)] --> R
+    R -->|relevant chunks| S[Synthesizer agent]
+    S -->|grounded answer + citations| C[Critic agent]
+    C --> D{supported?}
+    D -->|no — retry, max 2| S
+    D -->|yes| OUT[Return answer + verdict]
+```
 
 
 Built as a **LangGraph state graph**: the three agents are nodes, and a
