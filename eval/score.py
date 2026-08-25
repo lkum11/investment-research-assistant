@@ -1,7 +1,8 @@
 import json
 from src.llm import call_llm
+from src.config import CHUNK_STRATEGY
 
-with open("eval/results.json") as f:
+with open(f"eval/results_{CHUNK_STRATEGY}.json") as f:
     results = json.load(f)
 
 

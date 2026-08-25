@@ -1,12 +1,12 @@
 import chromadb
 from openai import OpenAI
-from src.config import OPENAI_API_KEY
+from src.config import OPENAI_API_KEY, COLLECTION_NAME
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Chroma client that saves to a local folder on disk
 chroma_client = chromadb.PersistentClient(path="data/chroma")
-collection = chroma_client.get_or_create_collection("earnings")
+collection = chroma_client.get_or_create_collection(COLLECTION_NAME)
 
 
 def embed(text: str) -> list[float]:

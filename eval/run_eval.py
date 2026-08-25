@@ -1,6 +1,8 @@
 import json
 from src.graph.graph import graph
 from src.agents.retriever import retrieve
+from src.config import CHUNK_STRATEGY
+
 
 # Load the golden set
 with open("eval/golden_set.json") as f:
@@ -34,7 +36,12 @@ for item in golden_set:
     })
 
     # Save everything
-    with open("eval/results.json", "w") as f:
+    output_path = f"eval/results_{CHUNK_STRATEGY}.json"
+    with open(output_path, "w") as f:
         json.dump(results, f, indent=2)
+    print(f"\nDone. Ran {len(results)} questions. Saved to {output_path}")
+    # # Save everything
+    # with open("eval/results.json", "w") as f:
+    #     json.dump(results, f, indent=2)
 
     print(f"\nDone. Ran {len(results)} questions. Saved to eval/results.json")
