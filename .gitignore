@@ -16,4 +16,5 @@ data/chroma/
 # OS / editor noise
 .DS_Store
 .vscode/
-.idea/eval/results*.json
+.idea/
+eval/results*.json
